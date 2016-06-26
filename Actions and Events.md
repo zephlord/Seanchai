@@ -29,38 +29,39 @@
   - Text (optional)- the text displayed when the result is selected
   - Result - the effects on the character. These can either be effects or a result set. e.g. '-5 physical stamina, + 1 apple item, -100/constitution health'
 * Example of complicated result:
-  - result =
-  > [{Probability: 100% if have horse, 50% otherwise
-  >            text: '<character> makes it to the bazaar'
-  >            time: 2 hours
-  >            result: set character location to bazaar},
-  >            {Probability: 100% - probability of making it
-  >            type: physical
-  >            result: [
-  >              {Probability: 25%
-  >              time: 15 minutes
-  >              text: 'early into <character's> journey, <character> is set upon by bandits'
-  >              result: 'encountered bandits' event triggers, targeting character},
-  >              {Probability: 50%
-  >              time: 1 hour
-  >              text: '<character> becomes woefully lost'
-  >              result: -10 physical stamina, +15 mental stamina if character is adventurous, else -10 mental stamina},
-  >              {Probability: 24%
-  >              time: 4 hours
-  >              text: 'after having almost reached the bazaar, <character> is set upon by bandits'
-  >              result: 'encountered bandits' event triggers, targeting character}.
-  >              {Probability: 1%
-  >              result:
-  >                [{Probability: 100% if treasure map not found, 0 otherwise
-  >                text: 'While wondering around utterly lost, <character> stumbles upon a treasure map'
-  >                time: 2 hours
-  >                result: 'treasure map' into character's inventory, 'treasure map' set to found, add priority to complete the 'treasure found' action, -20
-  >                physical stamina},
-  >                  {Probability: 100% if treasure map found, 0 otherwise
-  >                time: 8 hours
-  >                text: '<character> wanders around for a while. It's hot. Shit sucks
-  >              result: -50 physical stamina, character gains 'lost' condition}]}
-  >              ]}]
+  - result = ```
+ [{Probability: 100% if have horse, 50% otherwise
+            text: '<character> makes it to the bazaar'
+            time: 2 hours
+            result: set character location to bazaar},
+            {Probability: 100% - probability of making it
+            type: physical
+            result: [
+              {Probability: 25%
+              time: 15 minutes
+              text: 'early into <character's> journey, <character> is set upon by bandits'
+              result: 'encountered bandits' event triggers, targeting character},
+               {Probability: 50%
+               time: 1 hour
+               text: '<character> becomes woefully lost'
+               result: -10 physical stamina, +15 mental stamina if character is adventurous, else -10 mental stamina},
+               {Probability: 24%
+               time: 4 hours
+               text: 'after having almost reached the bazaar, <character> is set upon by bandits'
+               result: 'encountered bandits' event triggers, targeting character}.
+               {Probability: 1%
+               result:
+                 [{Probability: 100% if treasure map not found, 0 otherwise
+                text: 'While wondering around utterly lost, <character> stumbles upon a treasure map'
+                time: 2 hours
+                result: 'treasure map' into character's inventory, 'treasure map' set to found, add priority to complete the 'treasure found' action, -20
+                physical stamina},
+                  {Probability: 100% if treasure map found, 0 otherwise
+                time: 8 hours
+                text: '<character> wanders around for a while. It's hot. Shit sucks
+              result: -50 physical stamina, character gains 'lost' condition}]}
+              ]}]
+              ```
 
  * NOTE: the result functions of interactions will be slightly different in that they take in two characters and thus results will be generated based on the
  interaction type and the two characters involved. For example, a conversation between 2 characters would have a different result set from a conversation
