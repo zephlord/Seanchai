@@ -79,7 +79,9 @@
               result: -50 physical stamina, character gains 'lost' condition
              }]
         }]
-    }]
+    }]`
+
+    7. Public Result - This is the result that a character is looking at when determining whether to pick an action or not. The Public Result can be the same as the actual Result. 
 
 
  * NOTE: the result functions of interactions will be slightly different in that they take in two characters and thus results will be generated based on the
