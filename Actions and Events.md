@@ -28,7 +28,8 @@
   - Time (optional)- the time it takes for action/interaction or event to happen, can be fixed number or function (e.g. 3 hours, 2 hours - 5*strength minutes)
   - Text (optional)- the text displayed when the result is selected
   - Result - the effects on the character. These can either be effects or a result set. e.g. '-5 physical stamina, + 1 apple item, -100/constitution health'
-* Example of complicated result:
+7. Public Result - This is the result that a character is looking at when determining whether to pick an action or not. The Public Result can be the same as the actual Result.
+  * Example of complicated result:
   - result =  
 
 `  
@@ -81,7 +82,7 @@
         }]
     }]`
 
-    7. Public Result - This is the result that a character is looking at when determining whether to pick an action or not. The Public Result can be the same as the actual Result. 
+
 
 
  * NOTE: the result functions of interactions will be slightly different in that they take in two characters and thus results will be generated based on the
